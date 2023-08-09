@@ -7,7 +7,6 @@ public class CrowdSystem : MonoBehaviour
 {
     [Header("Elemensts")] 
     [SerializeField] private Transform runnersParent;
-
     [SerializeField] private GameObject runnerPrefab;
    
     [Header("Settings")] 

@@ -7,7 +7,6 @@ public class CrowdCounter : MonoBehaviour
 {
     [Header("Elements")] 
     [SerializeField] private TextMeshPro crowdCounterText;
-
     [SerializeField] private Transform runnersParent;
     
     // Start is called before the first frame update
