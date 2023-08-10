@@ -8,10 +8,9 @@ using Random = UnityEngine.Random;
 public class ChunkManager : MonoBehaviour
 {
     public static ChunkManager instance;
-    
+
     [Header("Elements")] 
-    [SerializeField] private Chunk[] chunkPrefabs;
-    [SerializeField] private Chunk[] levelChunks;
+    [SerializeField] private LevelSO[] levels;
     private GameObject FinishLine;
 
 
@@ -28,7 +27,7 @@ public class ChunkManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CreateOrderedLevel();
+        GenerateLevel();
 
         FinishLine = GameObject.FindWithTag("Finish");
     }
@@ -39,7 +38,18 @@ public class ChunkManager : MonoBehaviour
         
     }
 
-    private void CreateOrderedLevel()
+    private void GenerateLevel()
+    {
+        int currentLevel = GetLevel();
+        currentLevel = currentLevel % levels.Length;
+        LevelSO level = levels[currentLevel];
+        
+        CreateLevel((level.chunks));
+
+    }
+    
+
+    private void CreateLevel(Chunk[] levelChunks)
     {
         Vector3 chunkPosition = Vector3.zero;
         for (int i = 0; i < levelChunks.Length ; i++)
@@ -62,30 +72,16 @@ public class ChunkManager : MonoBehaviour
             
         }
     }
-
-
-    private void CreateRandomLevel()
-    {
-        Vector3 chunkPosition = Vector3.zero;
-        for (int i = 0; i < 5; i++)
-        {
-            Chunk chunkToCreate = chunkPrefabs[Random.Range(0, chunkPrefabs.Length)];
-
-            if (i > 0)
-            {
-                chunkPosition.z += chunkToCreate.GetLength() / 2;
-            }
-            
-            Chunk chunkInstance =  Instantiate(chunkToCreate, chunkPosition, Quaternion.identity ,transform);
-
-            chunkPosition.z += chunkInstance.GetLength() / 2 ;
-            
-        }
-    }
+    
 
     public float GetFinishZ()
     {
         return FinishLine.transform.position.z - 2 ;
+    }
+
+    public int GetLevel()
+    {
+        return PlayerPrefs.GetInt("level",0 );
     }
     
 }
