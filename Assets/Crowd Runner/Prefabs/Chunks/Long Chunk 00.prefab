@@ -215,12 +215,17 @@ PrefabInstance:
     - target: {fileID: 701724204672708893, guid: 38581c81df4e2ea40a38d9941895e2e6,
         type: 3}
       propertyPath: leftDoorBonusType
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 701724204672708893, guid: 38581c81df4e2ea40a38d9941895e2e6,
+        type: 3}
+      propertyPath: leftDoorBonusAmount
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 701724204672708893, guid: 38581c81df4e2ea40a38d9941895e2e6,
         type: 3}
       propertyPath: rightDoorBonusAmount
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38581c81df4e2ea40a38d9941895e2e6, type: 3}
@@ -305,12 +310,12 @@ PrefabInstance:
     - target: {fileID: 701724204672708893, guid: 38581c81df4e2ea40a38d9941895e2e6,
         type: 3}
       propertyPath: rightDoorBonusType
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 701724204672708893, guid: 38581c81df4e2ea40a38d9941895e2e6,
         type: 3}
       propertyPath: rightDoorBonusAmount
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38581c81df4e2ea40a38d9941895e2e6, type: 3}

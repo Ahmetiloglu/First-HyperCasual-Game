@@ -53,6 +53,7 @@ public class Enemy : MonoBehaviour
                 targetRunner = runner.transform;
                 
                 StartRunningTowardsTarget();
+                return;
             }
         }
     }

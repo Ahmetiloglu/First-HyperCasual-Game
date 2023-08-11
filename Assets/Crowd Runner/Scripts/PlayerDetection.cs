@@ -18,7 +18,8 @@ public class PlayerDetection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DetectDoor();
+        if (GameManager.instance.IsGameState())
+            DetectDoor();
     }
 
     private void DetectDoor()
@@ -43,7 +44,10 @@ public class PlayerDetection : MonoBehaviour
                 Debug.Log("we hit the finish line");
                 
                 PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
-                SceneManager.LoadScene(0);
+                
+                GameManager.instance.SetGameState(GameManager.GameState.LevelComplete);
+                
+                //SceneManager.LoadScene(0);
             }
         }
     }
