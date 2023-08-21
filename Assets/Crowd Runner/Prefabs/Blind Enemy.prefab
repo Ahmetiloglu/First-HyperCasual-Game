@@ -1031,7 +1031,7 @@ GameObject:
   - component: {fileID: 5292619476877255337}
   - component: {fileID: 7140313894804960755}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Blind Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1087,7 +1087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bddc3c440a038a4ea87a5c62bf3f48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  searchRadius: 7.06
+  searchRadius: 1
   moveSpeed: 15
 --- !u!1 &5383842326520316401
 GameObject:
